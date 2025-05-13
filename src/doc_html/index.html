@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<!-- Created by GNU Texinfo 7.0.3, https://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Project C7_BrickGame_v1.0-1</title>
+
+<meta name="description" content="Project C7_BrickGame_v1.0-1">
+<meta name="keywords" content="Project C7_BrickGame_v1.0-1">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+
+</head>
+
+<body lang="en">
+<div class="top-level-extent" id="Project-C7_005fBrickGame_005fv1_002e0_002d1">
+<h1 class="top">Project C7_BrickGame_v1.0-1</h1>
+
+
+<p>The program is written in C language of C11 standard using gcc compiler.
+The program consists of two parts: a library implementing the logic of the tetris game, and a terminal interface using the ncurses library.
+A finite-state machine is used to formalize the logic of the game.
+The library has a function that accepts user input and a function that outputs a matrix that describes the current state of the playing field whenever it is changed.
+The program library code is located in the src/brick_game/tetris folder.
+The program interface code is located in the src/gui/cli folder
+The program is built using a Makefile with the standard set of targets for GNU-programs: all, install, uninstall, clean, dvi, dist, test, gcov_report. Installation directory can be arbitrary
+The program is developed in accordance with the principles of structured programming.
+Prepared full coverage of the library with unit tests, using the check library. The coverage of the library with game logic with tests is more than 80 percent.
+The following mechanics is in the game:
+</p>
+<p>Rotation of pieces;
+Moving pieces horizontally;
+Acceleration of the piece&rsquo;s fall (when the button is pressed, the figure moves all the way down);
+Display of the next piece;
+Destruction of filled raws;
+End of the game when the top border of the playing field is reached;
+All sorts of pieces shown in the picture below must be included in the game.
+</p>
+<p>There is the support for all the buttons provided on the physical console for control:
+</p>
+<p>Start game - S botton
+Pause - Space
+End game - Esc
+Left arrow
+Right arrow
+Down arrow - piece falls
+Up arrow is not used in this game
+Action (piece rotation) - Enter.
+</p>
+
+<p>The playing field matches the dimensions of the console&rsquo;s playing field - ten &quot;pixels&quot; wide and twenty &quot;pixels&quot; high.
+After reaching the lower boundary of the field or contacting another figure, the figure stops. After that, the next piece, shown in the preview, is generated.
+The library interface corresponds to the description found in materials/library-specification.md.
+The UI supports rendering of the playing field and additional information.
+</p>
+
+<p>Bonus. Scoring and game record
+The game has next mechanics scoring, storing maximum points.
+</p>
+<p>This information is displayed by the user interface in the sidebar. The maximum number of points is stored in a file and saved between program runs.
+The maximum number of points ischanged during the game if the user exceeds the current maximum score.
+Points is accrued as follows:
+</p>
+<p>1 row is 100 points;
+2 rows is 300 points;
+3 rows is 700 points;
+4 rows is 1500 points;
+</p>
+
+<p>Bonus. Level mechanics
+The game has level mechanics. Each time a player gains 600 points, the level increases by 1. Increasing the level boosts the speed at which the pieces move. The maximum number of levels is 10.
+</p>
+
+</div>
+
+
+
+</body>
+</html>
